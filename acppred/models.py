@@ -94,14 +94,5 @@ class Model:
         with open(filename,'rb') as reader:
             return pickle.loads(reader.read())
 
-model = Model(estimator=RandomForestClassifier(), 
-              positive_peptides='data/raw/positive.txt',
-              negative_peptides='data/raw/negative.txt'
-              )
-model.train()
-model.save('data/models/model.pickle')
 
-model_loaded = Model.load('data/models/model.pickle')
-
-print(model.predict('WWWGGGLLL'))
     
