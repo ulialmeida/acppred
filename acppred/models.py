@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 import pandas as pd
 import pickle
+from acppred.utils import ALLOWED_AMINOACID
 
 class Model:
     
@@ -31,6 +32,7 @@ class Model:
         X_transform = []
 
         for peptides in X:
+            peptides = ''.join([aminoacid for aminoacid in peptides.upper() if aminoacid in ALLOWED_AMINOACID])
             aa_percent = ProtParam.ProteinAnalysis(peptides).get_amino_acids_percent()
             X_transform.append(aa_percent)
 
