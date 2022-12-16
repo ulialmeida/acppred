@@ -26,6 +26,16 @@ ________________________________________________________________________________
 acppred-predict: Predição de atividade anticancerigena de um peptideo, recebendo três parâmetros:
     input: Entrada de um arquivo em formato FASTA (syntax: --input)
     output: Saída de um arquivo em formato CSV (syntax: --output)
-    model: Modelo de treinamento pré definido/treinado para ACPPred
+    model: Modelo de treinamento pré definido/treinado para ACPPred (syntax: --model)
+    A utilização do argument_parser, required indica se o argumento é obrigatório, nesse caso, retornava True.
+ ----------------------  
+* Bio.SeqIO faz parte da biblioteca Biopython, possui interface simples para input e output de alinhamentos de sequência, SeqRecord lida com sequências como objetos 
 
-python acppred/server: 
+__________________________________________________________________________________________________________________________________________________
+acppred-models: Define uma previsão estimada potenciais peptídeos anticancerígenos;
+  - estimator: scikit-learn conta com ferramentas para ajuste, seleção e avaliação de modelos, classification_reports desenvolve um relatório de texto mostrando as principais métricas de classificação.
+  - positive_peptides: um arquivo contendo peptideos anticancer
+  - negative_peptides: um arquivo contendo peptideos que não possuem ação anticâncer
+__________________________________________________________________________________________________________________________________________________
+
+
